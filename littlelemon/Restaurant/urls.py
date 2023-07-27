@@ -4,10 +4,10 @@ from . import views
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
-    path('menu-items/', views.MenuItemView.as_view()),
-    path('menu-items/<int:pk>', views.SingleMenuItemView.as_view()),
-    path('message/', views.msg),
-    path('api-token-auth/', obtain_auth_token),
+    path('', views.index, name='index'),
+    path('menu-items/', views.MenuItemView.as_view(), name='menu-items'),
+    path('menu-items/<int:pk>', views.SingleMenuItemView.as_view(), name='menu-detail'),
+    path('user-auth-token', obtain_auth_token),
 
 ]
 #urlpatterns += router.urls
